@@ -1,0 +1,21 @@
+ssh-add /home/bence/.ssh/github⏎
+source /opt/ros/kinetic/setup.bash⏎
+⏎
+alias s="source devel/setup.bash"⏎
+⏎
+IDYNTREE_SUPERBUILD_ROOT="/home/bence/icub-ws/iDynTree-superbuild"⏎
+export PATH=$PATH:$IDYNTREE_SUPERBUILD_ROOT/build/install/bin⏎
+export IDYNTREE_INCLUDE_DIRS=$IDYNTREE_SUPERBUILD_ROOT/build/install/include⏎
+export YARP_DATA_DIRS=$YARP_DATA_DIRS:$IDYNTREE_SUPERBUILD_ROOT/build/install/share/codyco⏎
+⏎
+if [ -z "$GAZEBO_MODEL_PATH" ]; then⏎
+    export GAZEBO_MODEL_PATH=/home/bence/icub-ws/icub-gazebo⏎
+else⏎
+    export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/home/bence/icub-ws/icub-gazebo⏎
+fi⏎
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/usr/local/lib⏎
+alias pycharm=/home/bence/pycharm-community-2016.2.1/bin/pycharm.sh⏎
+⏎
+export NVM_DIR="/home/bence/.nvm"⏎
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm⏎
+
