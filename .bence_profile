@@ -1,7 +1,8 @@
-ssh-add /home/bence/.ssh/github
 source /opt/ros/kinetic/setup.bash
+export ROS_OS_OVERRIDE="ubuntu:16.04:xenial"
 
 alias s="source devel/setup.bash"
+alias qtcreator="/home/bence/qtcreator-4.1.0/bin/qtcreator.sh"
 
 IDYNTREE_SUPERBUILD_ROOT="/home/bence/icub-ws/iDynTree-superbuild"
 export PATH=$PATH:$IDYNTREE_SUPERBUILD_ROOT/build/install/bin
@@ -14,8 +15,48 @@ else
     export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/home/bence/icub-ws/icub-gazebo
 fi
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/usr/local/lib
-alias pycharm=/home/bence/pycharm-community-2016.2.1/bin/pycharm.sh
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/home/bence/icub_ws/src/manipulation_worlds/models
+
+alias pycharm=/home/bence/pycharm-community-2016.3.2/bin/pycharm.sh
 
 export NVM_DIR="/home/bence/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$ '
+
+
+
+
+#################################################
+##### VVV17 ICUB WINTER SCHOOL
+#################################################
+
+export ROBOT_CODE=~/robot-code
+export ROBOT_INSTALL=~/robot-install
+export ICUBcontrib_DIR=~/robot-install
+# caffe configuration
+export Caffe_ROOT=${ROBOT_CODE}/caffe
+
+# liblinear
+export LIBSVMLIN_DIR=${ROBOT_CODE}/himrep/liblinear-1.91
+
+# gazebo plugins and model
+source /usr/share/gazebo/setup.sh
+export GAZEBO_PLUGIN_PATH=${ROBOT_CODE}/codyco-superbuild/build/install/lib
+export GAZEBO_MODEL_PATH=${ROBOT_CODE}/codyco-superbuild/build/install/share/gazebo/models
+export GAZEBO_RESOURCE_PATH=${GAZEBO_RESOURCE_PATH}:${ROBOT_CODE}/codyco-superbuild/build/install/share/gazebo/worlds
+
+
+# matlab
+export MATLABPATH=${ROBOT_CODE}/codyco-superbuild/build/install/mex:${ROBOT_CODE}/codyco-superbuild/build/install/share/WB-Toolbox:${ROBOT_CODE}/codyco-superbuild/build/install/share/WB-Toolbox/images:${ROBOT_INSTALL}/simmodels
+
+export PATH=${PATH}:${ROBOT_INSTALL}/bin:${ROBOT_CODE}/codyco-superbuild/build/install/bin
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${ROBOT_INSTALL}/lib
+export YARP_DATA_DIRS=${ROBOT_INSTALL}/share/yarp:${ROBOT_INSTALL}/share/iCub:${ROBOT_INSTALL}/share/ICUBcontrib:${ROBOT_CODE}/codyco-superbuild/build/install/share/codyco
+
+export YARP_COLORED_OUTPUT=1
+
+#################################################
+
+ssh-add /home/bence/.ssh/github
