@@ -1,0 +1,22 @@
+[user]
+	name = Bence Magyar
+	email = bence.magyar.robotics@gmail.com
+[alias]
+	st = status
+	br = branch
+	co = checkout
+	ci = commit
+[core]
+	editor = vim
+[push]
+	default = simple
+
+# Always use ssh for github, even if the remote URL uses https or git                                                                                                 
+[url "git@github.com:"]                                                                                        
+  insteadOf = git://github.com/                                                                                
+[url "git@github.com:"]                                                                                        
+  insteadOf = https://github.com/
+[url "git@gitlab.com:"]                                                                                        
+  insteadOf = git://gitlab.com/                                                                                
+[url "git@gitlab.com:"]                                                                                        
+  insteadOf = https://gitlab.com/
