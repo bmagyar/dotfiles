@@ -16,3 +16,5 @@ au BufNewFile,BufRead *.xacro set filetype=xml
 
 set list
 set listchars=eol:⏎,tab:␉·,trail:❤,nbsp:⎵
+
+set hlsearch
