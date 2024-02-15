@@ -1,1 +1,1 @@
-sudo apt install i3 x11-xserver-utils xautolock
+sudo apt install i3 x11-xserver-utils xautolock i3blocks
